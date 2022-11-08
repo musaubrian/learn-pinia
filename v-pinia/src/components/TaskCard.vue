@@ -4,14 +4,16 @@
         <p>{{ task.id }}</p>
         <i class="material-icons" @click="supaTasks.deleteTasks(task.id)">delete</i>
     </div>
-    <div v-if="supaTasks.loading === true">
+    <div v-if="supaTasks.loading === true"
+        style="margin-top: 1rem; padding: 1rem; text-align: center; font-size: large;">
         Getting your tasks...
     </div>
-    <div v-if="supaTasks.fetchError === true">
-        Error fetching data
+    <div v-if="supaTasks.fetchError === true" style="color: red; margin-top: 1rem;">
+        <h2>Error fetching data</h2>
+        <p style="color: #0f0f0f; margin-top: 1rem;">Check your internet connection</p>
     </div>
-    <div v-if="supaTasks.uploadError === true">
-        Issue encountoured when adding tasks
+    <div v-if="supaTasks.uploadError === true" style="color: orange; padding: 1rem; text-align: center;">
+        <p>Issue encountered when uploading tasks</p>
     </div>
 </template>
 

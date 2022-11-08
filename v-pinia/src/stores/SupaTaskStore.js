@@ -25,7 +25,7 @@ export const useSupaStore =  defineStore("supaTasks", {
     },
     actions: {
         async deleteTasks(id){
-            const {data, error} = await supabase.from('pini').delete().eq('id', id)
+            const {data, error} = await supabase.from('pini').delete().eq('id', idgit)
         }
     }
 })

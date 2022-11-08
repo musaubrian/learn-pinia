@@ -1,8 +1,10 @@
 <template>
     <form @submit.prevent="handleSubmit()">
-        <input type="text" required placeholder="I need to do..." v-model="newTask">
-        <button type="submit">Add task</button>
-        <h1>{{ newTask }}</h1>
+        <input type="text" required placeholder="do the dishes" v-model="newTask">
+        <button type="submit" class="top-add">Add task</button>
+        <button type="submit" class="bottom-add">
+            <i class="material-icons">add</i>
+        </button>
     </form>
 </template>
 
@@ -59,5 +61,29 @@ button {
     font-weight: 650;
     font-size: 1.2rem;
     text-align: center;
+}
+
+.bottom-add {
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+    form {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 0.5rem;
+        display: flex;
+        width: 100%;
+    }
+
+    .top-add {
+        display: none;
+    }
+
+    .bottom-add {
+        display: inline-flex;
+        font-size: 1.3rem;
+    }
 }
 </style>
