@@ -6,15 +6,14 @@ export const useSupaStore =  defineStore("supaTasks", {
         tasks: '',
         loading: false,
         fetchError: false,
-        uploadError: false
+        uploadError: false,
+        deleteTask: false
     }),
     getters: {
         async getTasks(){
             this.loading = true
             const {data, error} = await supabase.from('pini').select()
-            
             if (data) {
-                console.log(data)
                 this.tasks = data
                 this.loading = false
             } else if (error) {
@@ -25,7 +24,10 @@ export const useSupaStore =  defineStore("supaTasks", {
     },
     actions: {
         async deleteTasks(id){
-            const {data, error} = await supabase.from('pini').delete().eq('id', idgit)
+            this.deleteTask = true
+            const {data, error} = await supabase.from('pini').delete().eq('id', id)
+            this.deleteTask = false
+            window.location.reload()
         }
     }
 })

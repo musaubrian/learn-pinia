@@ -27,7 +27,7 @@ export default {
             if (error) {
                 supaStore.uploadError = true
             } else {
-                supaStore.getTasks
+                window.location.reload()
             }
         }
     }

@@ -15,6 +15,9 @@
     <div v-if="supaTasks.uploadError === true" style="color: orange; padding: 1rem; text-align: center;">
         <p>Issue encountered when uploading tasks</p>
     </div>
+    <div v-if="supaTasks.deleteTask === true" style="color: orange;">
+        Deleting task...
+    </div>
 </template>
 
 <script setup>
@@ -26,7 +29,7 @@ supaTasks.getTasks
 
 <style lang="css" scoped>
 .card {
-    width: 80%;
+    width: 60%;
     background-color: #f1f1f1;
     padding: 1rem;
     border-radius: 15px;
@@ -50,5 +53,9 @@ h1 {
     color: #ff6600;
 }
 
-@media screen and (max-width: 750px) {}
+@media screen and (max-width: 750px) {
+    .card {
+        width: 80%;
+    }
+}
 </style>
