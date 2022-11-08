@@ -15,7 +15,7 @@
         <p>Issue encountered when uploading tasks</p>
     </div>
     <div v-if="supaTasks.deleteTask === true" style="color: orange;">
-        <p style="color: orange; margin-top: 1rem;">Patience...</p>
+        <p style="color: orange; margin-top: 1rem;">Lemme delete this real quick...</p>
     </div>
     <div v-if="supaTasks.noTasks === true">
         <h4 style="margin-top: 3rem; font-size: 1.5rem;">No tasks available</h4>
