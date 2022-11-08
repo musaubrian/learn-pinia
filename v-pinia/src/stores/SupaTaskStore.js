@@ -7,14 +7,19 @@ export const useSupaStore =  defineStore("supaTasks", {
         loading: false,
         fetchError: false,
         uploadError: false,
-        deleteTask: false
+        deleteTask: false,
+        noTasks: true
     }),
     getters: {
         async getTasks(){
             this.loading = true
+            this.noTasks = false
             const {data, error} = await supabase.from('pini').select()
             if (data) {
                 this.tasks = data
+                if (this.tasks.length < 1) {
+                    this.noTasks = true
+                }
                 this.loading = false
             } else if (error) {
                 this.fetchError = true
