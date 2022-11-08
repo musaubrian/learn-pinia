@@ -1,14 +1,17 @@
 <template>
   <main>
-    <h1>Hello world</h1>
+    <header>
+      <AddTasks />
+    </header>
     <TaskCard />
   </main>
 </template>
 
 <script>
+import AddTasks from './components/AddTasks.vue';
 import TaskCard from './components/TaskCard.vue';
 
 export default {
-  components: { TaskCard }
+  components: { TaskCard, AddTasks }
 }
 </script>
