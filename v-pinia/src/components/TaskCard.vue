@@ -42,6 +42,7 @@ h1 {
     justify-self: flex-start;
     font-size: 1.3rem;
     color: #464646;
+    text-transform: capitalize;
 }
 
 .material-icons {
