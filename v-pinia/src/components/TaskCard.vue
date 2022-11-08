@@ -1,7 +1,6 @@
 <template>
     <div class="card" v-for="task in supaTasks.tasks">
         <h1>{{ task.task_name }}</h1>
-        <p>{{ task.id }}</p>
         <i class="material-icons" @click="supaTasks.deleteTasks(task.id)">delete</i>
     </div>
     <div v-if="supaTasks.loading === true"
