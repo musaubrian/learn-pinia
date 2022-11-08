@@ -21,8 +21,6 @@
 import { useSupaStore } from "../stores/SupaTaskStore"
 const supaTasks = useSupaStore();
 supaTasks.getTasks
-
-console.table(supaTasks.tasks)
 </script>
 
 
@@ -30,7 +28,7 @@ console.table(supaTasks.tasks)
 .card {
     width: 80%;
     background-color: #f1f1f1;
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 15px;
     display: flex;
     justify-content: space-evenly;
@@ -51,4 +49,6 @@ h1 {
 .material-icons:hover {
     color: #ff6600;
 }
+
+@media screen and (max-width: 750px) {}
 </style>

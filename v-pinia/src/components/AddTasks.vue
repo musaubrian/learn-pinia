@@ -21,12 +21,12 @@ export default {
     methods: {
         async handleSubmit() {
             const supaStore = useSupaStore();
-            const { data, error } = await supabase.from('pini').insert({
+            const { error } = await supabase.from('pini').insert({
                 task_name: this.newTask
             })
             if (error) {
                 supaStore.uploadError = true
-            } else if (data) {
+            } else {
                 supaStore.getTasks
             }
         }
