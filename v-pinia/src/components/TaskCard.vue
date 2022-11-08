@@ -1,8 +1,4 @@
 <template>
-    <div class="card" v-for="task in supaTasks.tasks">
-        <h1>{{ task.task_name }}</h1>
-        <i class="material-icons" @click="supaTasks.deleteTasks(task.id)">delete</i>
-    </div>
     <div v-if="supaTasks.loading === true"
         style="margin-top: 1rem; padding: 1rem; text-align: center; font-size: large;">
         Getting your tasks...
@@ -14,11 +10,15 @@
     <div v-if="supaTasks.uploadError === true" style="color: orange; padding: 1rem; text-align: center;">
         <p>Issue encountered when uploading tasks</p>
     </div>
-    <div v-if="supaTasks.deleteTask === true" style="color: orange;">
-        <p style="color: orange; margin-top: 1rem;">Lemme delete this real quick...</p>
+    <div v-if="supaTasks.deleteTask === true" style="color: orange; margin-bottom: 2rem; margin-top: 2rem;">
+        <p style="color: orange;font-size: 1.3rem;">Lemme delete this real quick...</p>
     </div>
     <div v-if="supaTasks.noTasks === true">
         <h4 style="margin-top: 3rem; font-size: 1.5rem;">No tasks available</h4>
+    </div>
+    <div class="card" v-for="task in supaTasks.tasks">
+        <h1>{{ task.task_name }}</h1>
+        <i class="material-icons" @click="supaTasks.deleteTasks(task.id)">delete</i>
     </div>
 </template>
 
@@ -59,7 +59,7 @@ h1 {
 
 @media screen and (max-width: 750px) {
     .card {
-        width: 80%;
+        width: 90%;
     }
 }
 </style>

@@ -3,7 +3,7 @@
         <input type="text" required placeholder="do the dishes" v-model="newTask">
         <button type="submit" class="top-add">Add task</button>
         <button type="submit" class="bottom-add">
-            <i class="material-icons">add</i>
+            <i class="material-icons">edit</i>
         </button>
     </form>
 </template>
@@ -61,6 +61,7 @@ button {
     font-weight: 650;
     font-size: 1.2rem;
     text-align: center;
+    color: #f5f5f5;
 }
 
 .bottom-add {
@@ -69,12 +70,17 @@ button {
 
 @media screen and (max-width: 750px) {
     form {
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 0;
-        margin-bottom: 0.5rem;
+        padding-bottom: 1rem;
+        background-color: #ffffffe7;
         display: flex;
         width: 100%;
+    }
+
+    input {
+        width: 80%;
     }
 
     .top-add {
