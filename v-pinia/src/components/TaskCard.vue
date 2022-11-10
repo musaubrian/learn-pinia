@@ -16,6 +16,9 @@
     <div v-if="supaTasks.noTasks === true">
         <h4 style="margin-top: 3rem; font-size: 1.5rem;">No tasks available</h4>
     </div>
+    <div v-if="supaTasks.deleteTask === true">
+        <h4 style="margin-top: 3rem; font-size: 1.5rem; color: #fd0000;">Couldn't delete task</h4>
+    </div>
     <div class="card" v-for="task in supaTasks.tasks">
         <h1>{{ task.task_name }}</h1>
         <i class="material-icons" @click="supaTasks.deleteTasks(task.id)">delete</i>

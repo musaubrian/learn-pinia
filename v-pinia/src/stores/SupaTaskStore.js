@@ -29,10 +29,13 @@ export const useSupaStore =  defineStore("supaTasks", {
     },
     actions: {
         async deleteTasks(id){
-            this.deleteTask = true
-            const {data, error} = await supabase.from('pini').delete().eq('id', id)
-            this.deleteTask = false
-            window.location.reload()
+            const {error} = await supabase.from('pini').delete().eq('id', id)
+            if (error) {
+                this.deleteTask = true
+            } else {
+                this.deleteTask = false
+                window.location.reload()
+            }            
         }
     }
 })
